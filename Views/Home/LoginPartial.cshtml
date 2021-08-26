@@ -1,0 +1,11 @@
+@model Login
+<h2>Login</h2>
+<form action="LoginValid" method="post">
+    <label asp-for="Email"></label>
+    <span asp-validation-for="Email"></span>
+    <input asp-for="Email"/><br>
+    <label asp-for="Password"></label>
+    <span asp-validation-for="Password"></span>
+    <input type="password" asp-for="Password"/><br>
+    <button>Submit</button>
+</form>

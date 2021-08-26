@@ -1,0 +1,14 @@
+<h1>Welcome @ViewBag.User.FirstName to the Pizza Service!</h1>
+
+<a href="Pizza/Order">Make the Order</a>
+
+<h2>List of Pizza's Order</h2>
+@{
+    foreach (var item in @ViewBag.Pizzas)
+    {
+        <a href="DetailPizza/@item.PizzaId">@item.Name</a><br>
+    }
+
+}
+
+<a asp-action="LogOut">Log Out</a>

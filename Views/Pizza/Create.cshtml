@@ -1,0 +1,113 @@
+@model Pizza
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<a href="/Pizza">Back to the Pizza Service!</a>    
+<form asp-action="CreatePizza" asp-controller="Pizza">
+
+<span asp-validation-for="Name"></span>
+<label asp-for="Name"></label>
+<input asp-for="Name"><br>
+
+<span asp-validation-for="CrustStyle"></span>
+<label asp-for="CrustStyle"></label>
+<select type="" asp-for="CrustStyle">
+    <option value="Thin">Thin</option> 
+    <option value="Standard">Standard</option> 
+    <option value="Thick">Thick</option> 
+    <option value="Stuff Cheesy">Stuff Cheesy</option> 
+</select><br>
+
+<span asp-validation-for="Size"></span>
+<label asp-for="Size"></label>
+<select id="Size" asp-for="Size" onclick="updatebox()">
+    <option>Choose Size</option>
+    <option value="12">12 Inches</option> 
+    <option value="14">14 Inches</option> 
+    <option value="16">16 Inches</option> 
+</select><br>
+
+<span asp-validation-for="Toppings"></span>
+<label asp-for="Toppings"></label><br>
+<input id="cb2" type="checkbox" value="Pepperoni" onclick="updatebox()">
+<label> Pepperoni</label><br>
+<input id="cb3" type="checkbox" value="Mushroom" onclick="updatebox()">
+<label > Mushroom</label><br>
+<input id="cb4" type="checkbox" value="Black Olive" onclick="updatebox()">
+<label> Black Olive</label><br>
+<input id="cb5" type="checkbox" value="Pineapple" onclick="updatebox()">
+<label> Pineapple</label><br>
+<input id="cb6" type="checkbox" value="Canadian Bacon" onclick="updatebox()">
+<label> Canadian Bacon</label><br>
+<input id="cb7"  type="checkbox" value="Bell Pepper" onclick="updatebox()">
+<label> Bell Pepper</label><br>
+<input id="cb8"  type="checkbox" value="Sausage" onclick="updatebox()">
+<label> Sausage</label><br>
+<input type="hidden" id="list" asp-for="Toppings" />
+
+<label asp-for=Price></label>
+<input id="price" asp-for="Price" readonly/><br>
+<button>Order</button>
+</form>
+</body>
+<script>
+    function updatebox()
+    {
+        var textbox = document.getElementById("list");
+        var arr = [];
+        var priceVal = document.getElementById("price");
+        var value = 0.0;
+        if (document.getElementById('Size').value == 12){
+            value = 12 * 1.1;
+        }
+        if (document.getElementById('Size').value == 14){
+            value = 14 * 1.1;
+        }
+        if (document.getElementById('Size').value == 16){
+            value = 16 * 1.1;
+        }
+
+    if(document.getElementById('cb2').checked) {
+            arr.push(document.getElementById('cb2').value);
+            value = value + .75;
+        }
+
+        if(document.getElementById('cb3').checked) {
+            arr.push(document.getElementById('cb3').value);
+            value = value + .75;
+        }
+
+        if(document.getElementById('cb4').checked) {
+            arr.push(document.getElementById('cb4').value);
+            value = value + .75;
+        }
+        if(document.getElementById('cb5').checked) {
+            arr.push(document.getElementById('cb5').value);
+            value = value + .75;
+        }
+        if(document.getElementById('cb6').checked) {
+            arr.push(document.getElementById('cb6').value);
+            value = value + .75;
+        }
+        if(document.getElementById('cb7').checked) {
+            arr.push(document.getElementById('cb7').value);
+            value = value + .75;
+        }
+        if(document.getElementById('cb8').checked) {
+            arr.push(document.getElementById('cb8').value);
+            value = value + .75;
+        }
+        if (document.getElementById('size').value == ""){
+
+        }else{
+            priceVal.value = Math.floor(value * 100)/100;
+
+            textbox.value = arr.join(" ");
+        }
+    }
+</script>
+
+</html>
