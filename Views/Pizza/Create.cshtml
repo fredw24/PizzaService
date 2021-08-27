@@ -70,7 +70,7 @@
             value = 16 * 1.1;
         }
 
-    if(document.getElementById('cb2').checked) {
+        if(document.getElementById('cb2').checked) {
             arr.push(document.getElementById('cb2').value);
             value = value + .75;
         }
@@ -100,14 +100,12 @@
             arr.push(document.getElementById('cb8').value);
             value = value + .75;
         }
-        if (document.getElementById('size').value == ""){
 
-        }else{
             priceVal.value = Math.floor(value * 100)/100;
 
             textbox.value = arr.join(" ");
+            
         }
-    }
 </script>
 
 </html>
