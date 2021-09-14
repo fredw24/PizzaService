@@ -15634,6 +15634,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Fred\\Documents\\DotNet3.0\\PizzaService\\Views\\Pizza\\Create.cshtml",
+      "TargetPath": "Views\\Pizza\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Fred\\Documents\\DotNet3.0\\PizzaService\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -15666,6 +15671,16 @@
     {
       "FilePath": "c:\\Users\\Fred\\Documents\\DotNet3.0\\PizzaService\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fred\\Documents\\DotNet3.0\\PizzaService\\Views\\Pizza\\DetailPizza.cshtml",
+      "TargetPath": "Views\\Pizza\\DetailPizza.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Fred\\Documents\\DotNet3.0\\PizzaService\\Views\\Pizza\\Index.cshtml",
+      "TargetPath": "Views\\Pizza\\Index.cshtml",
       "FileKind": "mvc"
     }
   ],

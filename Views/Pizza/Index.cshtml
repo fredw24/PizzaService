@@ -3,12 +3,20 @@
 <a href="Pizza/Order">Make the Order</a>
 
 <h2>List of Pizza's Order</h2>
-@{
-    foreach (var item in @ViewBag.Pizzas)
-    {
-        <a href="DetailPizza/@item.PizzaId">@item.Name</a><br>
-    }
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Pizza Orders
+  </button>
+  <div class="dropdown-menu" aria-labelledby="Recent Orders">
+    @{
+        foreach (var item in @ViewBag.Pizzas)
+        {
+            <a class="dropdown-item" href="DetailPizza/@item.PizzaId">@item.Name</a><br>
+        }
 
-}
+    }
+  </div>
+</div>
+
 
 <a asp-action="LogOut">Log Out</a>

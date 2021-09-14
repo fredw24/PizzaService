@@ -51,6 +51,23 @@ button.accept-policy {
   line-height: inherit;
 }
 
+.item img{
+
+  object-fit: cover;
+}
+
+.item{
+  width: 100%;
+  height: 100%;  
+}
+
+.carousel-item {
+  height: 100%;
+}
+
+.carousel {
+  height: 300px;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -61,6 +78,14 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+
+  background-image:url('../images/PizzaBackground.jpg');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size: cover;
+  
+
+  
 }
 .footer {
   position: absolute;

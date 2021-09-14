@@ -32,26 +32,33 @@
 
 <span asp-validation-for="Toppings"></span>
 <label asp-for="Toppings"></label><br>
-<input id="cb2" type="checkbox" value="Pepperoni" onclick="updatebox()">
-<label> Pepperoni</label><br>
-<input id="cb3" type="checkbox" value="Mushroom" onclick="updatebox()">
-<label > Mushroom</label><br>
-<input id="cb4" type="checkbox" value="Black Olive" onclick="updatebox()">
-<label> Black Olive</label><br>
-<input id="cb5" type="checkbox" value="Pineapple" onclick="updatebox()">
-<label> Pineapple</label><br>
-<input id="cb6" type="checkbox" value="Canadian Bacon" onclick="updatebox()">
-<label> Canadian Bacon</label><br>
-<input id="cb7"  type="checkbox" value="Bell Pepper" onclick="updatebox()">
-<label> Bell Pepper</label><br>
-<input id="cb8"  type="checkbox" value="Sausage" onclick="updatebox()">
-<label> Sausage</label><br>
-<input type="hidden" id="list" asp-for="Toppings" />
+<button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Open for Toppings
+  </button>
+  <div class="dropdown-menu" aria-labelledby="Recent Orders">
+    <input id="cb2" type="checkbox" value="Pepperoni" onclick="updatebox()">
+    <label> Pepperoni</label>
+    <input id="cb3" type="checkbox" value="Mushroom" onclick="updatebox()">
+    <label > Mushroom</label>
+    <input id="cb4" type="checkbox" value="Black Olive" onclick="updatebox()">
+    <label> Black Olive</label>
+    <input id="cb5" type="checkbox" value="Pineapple" onclick="updatebox()">
+    <label> Pineapple</label><br>
+    <input id="cb6" type="checkbox" value="Canadian Bacon" onclick="updatebox()">
+    <label> Canadian Bacon</label>
+    <input id="cb7"  type="checkbox" value="Bell Pepper" onclick="updatebox()">
+    <label> Bell Pepper</label>
+    <input id="cb8"  type="checkbox" value="Sausage" onclick="updatebox()">
+    <label> Sausage</label>
+    
+  </div>
+  <input type="hidden" id="list" asp-for="Toppings" />
+<br>
 
-<label asp-for=Price></label>
-<input id="price" asp-for="Price" readonly/><br>
-<button>Order</button>
-</form>
+    <label asp-for=Price></label>
+    <input id="price" asp-for="Price" readonly/><br>
+    <button>Order</button>
+    </form>
 </body>
 <script>
     function updatebox()
