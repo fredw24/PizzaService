@@ -1,22 +1,33 @@
-<h1>Welcome @ViewBag.User.FirstName to the Pizza Service!</h1>
+<body>
+  <h1>Welcome @ViewBag.User.FirstName to the Pizza Service!</h1>
 
-<a href="Pizza/Order">Make the Order</a>
-
-<h2>List of Pizza's Order</h2>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Pizza Orders
-  </button>
-  <div class="dropdown-menu" aria-labelledby="Recent Orders">
-    @{
-        foreach (var item in @ViewBag.Pizzas)
-        {
-            <a class="dropdown-item" href="DetailPizza/@item.PizzaId">@item.Name</a><br>
-        }
-
+  <a href="Pizza/Order">Make the Order</a>
+  @{
+    if(ViewBag.saved){
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>You have made an Order!</strong> Check in the order dropdown to see previous orders.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     }
+  }
+  <h2>List of Pizza's Order</h2>
+  <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Pizza Orders
+    </button>
+    <div class="dropdown-menu" aria-labelledby="Recent Orders">
+      @{
+          foreach (var item in @ViewBag.Pizzas)
+          {
+              <a class="dropdown-item" href="DetailPizza/@item.PizzaId">@item.Name</a><br>
+          }
+
+      }
+    </div>
   </div>
-</div>
 
 
-<a asp-action="LogOut">Log Out</a>
+  <a asp-action="LogOut">Log Out</a>
+</body>

@@ -22,6 +22,18 @@ namespace PizzaService.Controllers
         }
         public IActionResult Index()
         {
+            string? saved = HttpContext.Session.GetString("saved");
+            if (saved =="Confirm")
+            {
+                ViewBag.saved = true;
+                HttpContext.Session.SetString("saved", "blank");
+
+            }
+            else
+            {
+                ViewBag.saved = false;
+            }
+
             int? id = HttpContext.Session.GetInt32("id");
             if (id != null)
             {
@@ -40,17 +52,20 @@ namespace PizzaService.Controllers
         [HttpGet("Pizza/Order")]
         public IActionResult Create()
         {
+            
             return View();
         }
 
         public IActionResult CreatePizza(Pizza pizza)
         {
+            
             Console.WriteLine(pizza.Price);
             pizza.UserId = (int)HttpContext.Session.GetInt32("id");
             if (ModelState.IsValid)
             {
                 dbContext.Add(pizza);
                 dbContext.SaveChanges();
+                HttpContext.Session.SetString("saved", "Confirm");
                 return RedirectToAction("Index");
             }
             return View("Create");
@@ -58,6 +73,7 @@ namespace PizzaService.Controllers
         [HttpGet("DetailPizza/{id}")]
         public IActionResult DetailPizza(int id)
         {
+            
             ViewBag.Pizza = dbContext.Pizza.FirstOrDefault(p => p.PizzaId == id);
             ViewBag.Pizza.Price = Math.Round(ViewBag.Pizza.Price,2);
             return View();

@@ -45,6 +45,9 @@ html {
 .box-shadow {
   box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
+.box{
+  display: inline;
+}
 
 button.accept-policy {
   font-size: 1rem;
@@ -53,12 +56,14 @@ button.accept-policy {
 
 .item img{
 
-  object-fit: cover;
+  margin: auto;
+  
 }
 
 .item{
   width: 100%;
-  height: 100%;  
+  height: auto;
+ 
 }
 
 .carousel-item {
@@ -66,7 +71,7 @@ button.accept-policy {
 }
 
 .carousel {
-  height: 300px;
+  height: auto;
 }
 /* Sticky footer styles
 -------------------------------------------------- */

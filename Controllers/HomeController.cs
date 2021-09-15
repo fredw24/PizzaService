@@ -35,6 +35,7 @@ namespace PizzaService.Controllers
         [HttpGet("LoginAndReg")]
         public IActionResult LoginAndReg()
         {
+            HttpContext.Session.SetString("saved", "blank");
             return View();
         }
 
